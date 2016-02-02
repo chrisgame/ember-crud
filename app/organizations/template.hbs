@@ -1,5 +1,7 @@
 <h3>Organizations</h3>
+<ul>
 {{#each model as |organization|}}
-  <p>{{organization.name}}</p>
+  <li>{{#link-to 'organizations.edit' organization}}{{organization.name}}{{/link-to}}</li>
 {{/each}}
+</ul>
 {{outlet}}

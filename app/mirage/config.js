@@ -8,5 +8,16 @@ export default function() {
         attributes: attrs
       }))
     };
+  }),
+
+  this.get('/organizations/:id', function(db, request) {
+    const id = request.params.id;
+    return {
+      data: {
+        type: 'organizations',
+        id: id,
+        attributes: db.organizations.find(id)
+      }
+    };
   })
 }
