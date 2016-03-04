@@ -1,8 +1,0 @@
-<h3>{{model.name}}</h3>
-<h4>Repositories</h4>
-<ul>
-{{#each model.repositories as |repo|}}
-  <li>{{#link-to 'organizations.organization.repositories.repository' repo.id}}{{repo.name}}{{/link-to}}</li>
-{{/each}}
-</ul>
-{{outlet}}
