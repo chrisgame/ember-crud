@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('organizations', function() {
-    this.route('edit', { path: '/:id' }, function(){
+    this.route('organization', { path: '/:id' }, function(){
       this.route('repositories', function() {
         this.route('repository', { path: '/:id' });
       });
