@@ -6,7 +6,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('organizations');
+  this.route('organizations', function() {
+    this.modal('create-modal', {
+      withParams: ['type'],
+      actions: {
+        add: "add",
+        cancel: "cancel"
+      }
+    });
+  });
 });
 
 export default Router;

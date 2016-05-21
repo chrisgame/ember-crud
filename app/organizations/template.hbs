@@ -1,10 +1,22 @@
-<h3>Organizations</h3>
+<h3>Organizations {{#link-to (query-params type="organization") tagName="button"}}
+      +
+    {{/link-to}}</h3>
 <ul>
 {{#each model as |organization|}}
-  <li>{{organization.name}}</li>
+  <li>
+    {{organization.name}}
+    {{#link-to (query-params type="repository") tagName="button"}}
+      +
+    {{/link-to}}
+  </li>
   <ul>
     {{#each organization.repositories as |repository|}}
-      <li>{{repository.name}}</li> 
+      <li>
+        {{repository.name}} 
+        {{#link-to (query-params type="user") tagName="button"}}
+          +
+        {{/link-to}}
+      </li>
       <ul>
       {{#each repository.users as |user|}}
         <li>{{user.name}}</li>
