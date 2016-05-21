@@ -1,4 +1,8 @@
-<h1>Create new {{type}}</h1>
-<div>{{input}}</div>
-<button {{action "add"}}>Add</button>
-<button {{action "cancel"}}>Cancel</button>
+<h3>Create new {{type}}</h3>
+<div>
+  <span>Name:</span>
+  <input type="text" oninput={{action (mut name) value="target.value"}}>
+</div>
+
+<button onClick={{action "add" type name id}}>Add</button>
+<button onClick={{action "cancel"}}>Cancel</button>

@@ -2,11 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    add: function() {
-      this.sendAction('add');
+    add: function(type, name, id) {
+      this.sendAction('add', type, name, id);
+      this.sendAction('dismiss');
     },
     cancel: function() {
-      this.sendAction('cancel');
+      this.sendAction('dismiss');
     }
   }
 });

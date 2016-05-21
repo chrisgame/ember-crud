@@ -8,10 +8,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('organizations', function() {
     this.modal('create-modal', {
-      withParams: ['type'],
+      withParams: ['type', 'id'],
       actions: {
-        add: "add",
-        cancel: "cancel"
+        add: "add"
       }
     });
   });

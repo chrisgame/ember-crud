@@ -5,15 +5,15 @@
 {{#each model as |organization|}}
   <li>
     {{organization.name}}
-    {{#link-to (query-params type="repository") tagName="button"}}
+    {{#link-to (query-params type="repository" id=organization.id) tagName="button"}}
       +
     {{/link-to}}
   </li>
   <ul>
     {{#each organization.repositories as |repository|}}
       <li>
-        {{repository.name}} 
-        {{#link-to (query-params type="user") tagName="button"}}
+        {{repository.name}}
+        {{#link-to (query-params type="user" id=repository.id) tagName="button"}}
           +
         {{/link-to}}
       </li>
