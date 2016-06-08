@@ -21,6 +21,11 @@ export default Ember.Controller.extend({
           user.get('repository.users').pushObject(this.get('store').createRecord('user', { name: name }));
           break;
       }
+    },
+    save() {
+      this.get('store').peekAll('organization').forEach((org) => {
+        org.save();
+      });
     }
   }
 });
